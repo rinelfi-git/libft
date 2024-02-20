@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 18:48:27 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/20 18:52:31 by erijania         ###   ########.fr       */
+/*   Created: 2024/02/20 18:52:44 by erijania          #+#    #+#             */
+/*   Updated: 2024/02/20 18:59:45 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char c)
-{
-	int	is_lower;
-	int	is_upper;
-	int	is_digit;
+#include "libft.h"
 
-	is_lower = c >= 'a' && c <= 'z';
-	is_upper = c >= 'A' && c <= 'Z';
-	is_digit = c >= '0' && c <= '9';
-	return (is_lower || is_upper || is_digit);
+int	ft_isascii(char c)
+{
+	return (c >= 0 && c <= 127);
 }
