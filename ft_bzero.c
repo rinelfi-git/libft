@@ -6,18 +6,21 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:22:46 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/20 19:23:58 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/21 09:03:53 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(char *str, int n)
+void	ft_bzero(void *s, int n)
 {
-	while (*str && n > 0)
+	unsigned char	*tmp;
+
+	tmp = (char *) s;
+	while (*tmp && n > 0)
 	{
-		*str = '\0';
-		str++;
+		*tmp = '\0';
+		tmp++;
 		n--;
 	}
 }

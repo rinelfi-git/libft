@@ -6,11 +6,11 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 18:48:27 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/20 18:52:31 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/21 09:05:15 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
 	int	is_lower;
 	int	is_upper;

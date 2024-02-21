@@ -6,11 +6,11 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 18:44:32 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/20 19:07:03 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/21 09:04:58 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

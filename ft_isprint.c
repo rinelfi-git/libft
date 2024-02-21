@@ -6,11 +6,11 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:02:18 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/20 19:02:56 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/21 09:04:49 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	return (c >= ' ' && c <= '~');
 }

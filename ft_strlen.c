@@ -6,16 +6,16 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:05:37 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/20 19:06:26 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/21 09:04:22 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *s)
 {
 	int	ret;
 
 	ret = 0;
-	while (str[ret])
+	while (s[ret])
 		ret++;
 	return (ret);
 }
