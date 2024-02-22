@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 19:40:46 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/22 19:49:36 by erijania         ###   ########.fr       */
+/*   Created: 2024/02/22 19:55:50 by erijania          #+#    #+#             */
+/*   Updated: 2024/02/22 19:56:27 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+int	main(void)
 {
-	size_t	total;
-	void	*ret;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	total = nmemb * size;
-	ret = malloc(total);
-	if (ret == NULL)
-		return (NULL);
-	ft_memset(ret, 0, total);
-	return (ret);
+	char	*src = "Akory rika";
+	char	*dest;
+	
+	return (0);
 }
