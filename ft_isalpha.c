@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:06:51 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/21 09:05:09 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/22 19:59:30 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	return (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z');
+	return (ft_islower(c) || ft_isupper(c));
 }
