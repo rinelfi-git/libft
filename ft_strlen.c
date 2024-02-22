@@ -6,13 +6,15 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:05:37 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/21 09:04:22 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/22 10:15:09 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int	ret;
+	size_t	ret;
 
 	ret = 0;
 	while (s[ret])
