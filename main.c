@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:55:50 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/22 20:41:55 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/22 21:08:07 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 int	main(void)
 {
-	printf("%s\n", ft_strjoin("Akory rika ", "zaza ty!"));
+	printf("'%s'\n", ft_strtrim("   zafa      mira   ", "a"));
 	return (0);
 }
