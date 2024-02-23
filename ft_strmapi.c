@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 19:55:50 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 09:07:25 by erijania         ###   ########.fr       */
+/*   Created: 2024/02/23 08:48:57 by erijania          #+#    #+#             */
+/*   Updated: 2024/02/23 09:09:55 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdlib.h>
 
-char	lower(unsigned int i, char c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	return (ft_tolower(c));
-}
+	char			*ret;
+	unsigned int	i;
 
-int	main(void)
-{
-	printf("string : %s\n", ft_strmapi("Iza no anaran'ingahy RAIKA ITO", &lower));
-	return (0);
+	ret = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (ret == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		ret[i] = f(i, s[i]);
+		i++;
+	}
+	ret[i] = '\0';
+	return (ret);
 }
