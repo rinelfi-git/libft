@@ -16,6 +16,7 @@ SOURCES		=	ft_atoi.c \
 				ft_islower.c \
 				ft_isprint.c \
 				ft_isupper.c \
+				ft_itoa.c \
 				ft_memchr.c \
 				ft_memcmp.c \
 				ft_memcpy.c \
