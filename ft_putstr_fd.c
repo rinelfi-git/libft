@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 19:55:50 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 09:37:55 by erijania         ###   ########.fr       */
+/*   Created: 2024/02/23 09:35:42 by erijania          #+#    #+#             */
+/*   Updated: 2024/02/23 09:36:36 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <unistd.h>
 
-int	main(void)
+void	ft_putstr_fd(char *s, int fd)
 {
-	ft_putstr_fd("Manakory aby raona o\n", 1);
-	return (0);
+	while (*s)
+		write(fd, s++, 1);
 }
