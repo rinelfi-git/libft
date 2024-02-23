@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 19:55:50 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 09:16:21 by erijania         ###   ########.fr       */
+/*   Created: 2024/02/23 09:11:39 by erijania          #+#    #+#             */
+/*   Updated: 2024/02/23 09:14:17 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-void	lower(unsigned int i, char *c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	*c = ft_tolower(*c);
-}
+	unsigned int	i;
 
-int	main(void)
-{
-	char	c[] = "Iza no anaran'ingahy RAIKA ITO";
-	ft_striteri(c, &lower);
-	printf("string : %s\n", c);
-	return (0);
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
