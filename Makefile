@@ -44,7 +44,8 @@ SOURCES		=	ft_atoi.c \
 				ft_toupper.c
 OBJECTS		=	$(patsubst %.c,$(D_OBJECTS)/%.o,$(SOURCES))
 BONUS_SRC	= 	ft_lstadd_front.c \
-				ft_lstnew.c
+				ft_lstnew.c \
+				ft_lstsize.c
 BONUS_OBJ	=	$(patsubst %.c,$(D_OBJECTS)/%.o,$(BONUS_SRC))
 
 all					: $(NAME)

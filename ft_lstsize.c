@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 19:55:50 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 10:25:19 by erijania         ###   ########.fr       */
+/*   Created: 2024/02/23 10:21:37 by erijania          #+#    #+#             */
+/*   Updated: 2024/02/23 10:24:15 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*heap;
-	t_list	**list;
+	int	ret;
 
-	heap = ft_lstnew("Rijaniaina");
-	list = &heap;
-	ft_lstadd_front(list, ft_lstnew("Elie"));
-	ft_lstadd_front(list, ft_lstnew("Fidèle"));
-	printf("size : %d", ft_lstsize(*list));
-	return (0);
+	ret = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		ret++;
+	}
+	return (ret);
 }
