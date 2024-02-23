@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:44:18 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 19:27:38 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/23 22:04:48 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int			i;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (NULL);
 	if (src >= dest)
 		ft_memcpy(dest, src, n);

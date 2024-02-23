@@ -6,12 +6,13 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 07:44:27 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 08:47:40 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/23 22:42:43 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <limits.h>
 
 static int	n_sign(int n)
 {
@@ -42,6 +43,8 @@ char	*ft_itoa(int n)
 	int		sign;
 	char	*ret;
 
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
 	sign = n_sign(n);
 	length = n_length(n);
 	n = n * sign;
@@ -54,7 +57,7 @@ char	*ft_itoa(int n)
 		ret[length--] = (n % 10) + '0';
 		n /= 10;
 	}
-	ret[length--] = (n % 10) + '0';
+	ret[length--] = n + '0';
 	if (sign < 0)
 		ret[length] = '-';
 	return (ret);

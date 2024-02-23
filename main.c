@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:55:50 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 18:50:52 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/23 22:21:44 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@
 
 int	main(void)
 {
-	char	*s;
-	char	d[15];
+	size_t	size;
 
-	s = "This is the source";
-	printf("%s\n", s);
-	ft_strlcpy(d, "", 15);
-	write(1, d, 15);
+	size = 18446744073709551615ULL;
+	printf("%s\n", ft_substr("hola", 0, size));
 	return (0);
 }
