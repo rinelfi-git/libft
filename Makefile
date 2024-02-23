@@ -58,7 +58,7 @@ all					: $(NAME)
 $(NAME)				: $(HEADER) $(OBJECTS)
 	$(AR) $(NAME) $(OBJECTS)
 
-%.o	: %.c
+%.o					: %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean 				:
