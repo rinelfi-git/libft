@@ -6,11 +6,16 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:10:30 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/22 19:24:38 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/23 19:55:37 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_isblank(int c)
+{
+	return (c == ' ' || (c >= 9 && c <= 13));
+}
 
 int	ft_atoi(const char *nptr)
 {
@@ -19,7 +24,7 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	ret = 0;
-	while (*nptr == ' ')
+	while (ft_isblank(*nptr))
 		nptr++;
 	if (*nptr == '+' || *nptr == '-')
 	{

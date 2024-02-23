@@ -4,7 +4,6 @@ AR			=	ar rcs
 NAME		=	libft.a
 HEADER		=	libft.h
 DEL			=	rm -rf
-D_OBJECTS	=	obj
 DIR_CREATE	=	mkdir -p
 SOURCES		=	ft_atoi.c \
 				ft_bzero.c \
@@ -42,28 +41,29 @@ SOURCES		=	ft_atoi.c \
 				ft_substr.c \
 				ft_tolower.c \
 				ft_toupper.c
-OBJECTS		=	$(patsubst %.c,$(D_OBJECTS)/%.o,$(SOURCES))
-BONUS_SRC	= 	ft_lstadd_back.c \
-				ft_lstadd_front.c \
-				ft_lstlast.c \
-				ft_lstnew.c \
-				ft_lstsize.c
-BONUS_OBJ	=	$(patsubst %.c,$(D_OBJECTS)/%.o,$(BONUS_SRC))
+OBJECTS		=	$(SOURCES:.c=.o)
+BONUS_SRC	= 	_ft_lstadd_back.c \
+				_ft_lstadd_front.c \
+				_ft_lstclear.c \
+				_ft_lstdelone.c \
+				_ft_lstiter.c \
+				_ft_lstlast.c \
+				_ft_lstmap.c \
+				_ft_lstnew.c \
+				_ft_lstsize.c
+BONUS_OBJ	=	$(BONUS_SRC:.c=.o)
 
 all					: $(NAME)
 
 $(NAME)				: $(HEADER) $(OBJECTS)
 	$(AR) $(NAME) $(OBJECTS)
 
-$(D_OBJECTS)/%.o	: %.c $(D_OBJECTS)
+%.o	: %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
-
-$(D_OBJECTS)		:
-	$(DIR_CREATE) $(D_OBJECTS)
 
 clean 				:
 	$(DEL) $(OBJECTS)
-	$(DEL) $(D_OBJECTS)
+	$(DEL) $(BONUS_OBJ)
 
 fclean				: clean
 	$(DEL) $(NAME)
