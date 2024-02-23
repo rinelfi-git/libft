@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 08:50:14 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 09:43:29 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/23 10:00:37 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define LIBFT_H
 # include <stddef.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_isalpha(int c);
@@ -49,4 +54,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+t_list	*ft_lstnew(void *content);
 #endif

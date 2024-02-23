@@ -43,6 +43,8 @@ SOURCES		=	ft_atoi.c \
 				ft_tolower.c \
 				ft_toupper.c
 OBJECTS		=	$(patsubst %.c,$(D_OBJECTS)/%.o,$(SOURCES))
+BONUS_SRC	= 	ft_lstnew.c
+BONUS_OBJ	=	$(patsubst %.c,$(D_OBJECTS)/%.o,$(BONUS_SRC))
 
 all					: $(NAME)
 
@@ -63,3 +65,6 @@ fclean				: clean
 	$(DEL) $(NAME)
 
 re					: fclean all
+
+bonus				: $(NAME) $(BONUS_OBJ)
+	$(AR) $(NAME) $(BONUS_OBJ)
