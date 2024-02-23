@@ -1,11 +1,11 @@
-CC			= cc
-CFLAGS		= -Werror -Wextra -Wall
-AR			= ar rcs
-NAME		= libft.a
-HEADER		= libft.h
-DEL			= rm -rf
-D_OBJECTS	= obj
-DIR_CREATE	= mkdir -p
+CC			=	cc
+CFLAGS		=	-Werror -Wextra -Wall
+AR			=	ar rcs
+NAME		=	libft.a
+HEADER		=	libft.h
+DEL			=	rm -rf
+D_OBJECTS	=	obj
+DIR_CREATE	=	mkdir -p
 SOURCES		=	ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
@@ -35,7 +35,7 @@ SOURCES		=	ft_atoi.c \
 				ft_substr.c \
 				ft_tolower.c \
 				ft_toupper.c
-OBJECTS	= $(patsubst %.c,$(D_OBJECTS)/%.o,$(SOURCES))
+OBJECTS		=	$(patsubst %.c,$(D_OBJECTS)/%.o,$(SOURCES))
 
 all					: $(NAME)
 
@@ -48,11 +48,11 @@ $(D_OBJECTS)/%.o	: %.c $(D_OBJECTS)
 $(D_OBJECTS)		:
 	$(DIR_CREATE) $(D_OBJECTS)
 
-clean 	:
+clean 				:
 	$(DEL) $(OBJECTS)
 	$(DEL) $(D_OBJECTS)
 
-fclean	: clean
+fclean				: clean
 	$(DEL) $(NAME)
 
-re		: fclean all
+re					: fclean all
