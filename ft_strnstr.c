@@ -6,12 +6,11 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:01:03 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/24 16:23:11 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 22:57:05 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_min(int n1, int n2)
 {

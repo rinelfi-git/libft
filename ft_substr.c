@@ -6,13 +6,12 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 20:13:58 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/24 11:00:16 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 20:42:22 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <limits.h>
 
 static size_t	ft_min(size_t s1, size_t s2)
 {
@@ -43,7 +42,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		len = ft_min(ft_abs(s_len - start), len) + 1;
 	ret = (char *)malloc(len * sizeof(char));
-	if (ret == NULL)
+	if (!ret)
 		return (NULL);
 	if (is_empty)
 		ret[0] = '\0';

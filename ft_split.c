@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 21:11:19 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/22 22:14:10 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 21:22:19 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,30 @@ static size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**memclear(char **tab, size_t max)
 {
-	char	**ret;
-	size_t	size;
-	int		i;
+	size_t	j;
 
-	size = count_words(s, c);
-	ret = (char **)ft_calloc(size + 1, sizeof(char **));
-	if (ret == NULL)
-		return (NULL);
+	j = max;
+	while (j > 0)
+	{
+		j--;
+		if (tab[j])
+		{
+			free(tab[j]);
+			tab[j] = NULL;
+		}
+	}
+	free(tab);
+	tab = NULL;
+	return (tab);
+}
+
+static char	**get_string(char **tab, char const *s, char c)
+{
+	size_t	i;
+	size_t	size;
+
 	i = 0;
 	while (*s)
 	{
@@ -49,9 +63,26 @@ char	**ft_split(char const *s, char c)
 		while (s[size] && s[size] != c)
 			size++;
 		if (size > 0)
-			ret[i++] = ft_substr(s, 0, size);
+		{
+			tab[i] = ft_substr(s, 0, size);
+			if (!tab[i])
+				return (memclear(tab, i + 1));
+			i++;
+		}
 		s += size;
 	}
-	ret[i] = NULL;
-	return (ret);
+	tab[i] = NULL;
+	return (tab);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**ret;
+	size_t	size;
+
+	size = count_words(s, c);
+	ret = (char **)ft_calloc(size + 1, sizeof(char **));
+	if (ret == NULL)
+		return (NULL);
+	return (get_string(ret, s, c));
 }
