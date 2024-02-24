@@ -6,11 +6,12 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:01:03 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 19:49:26 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:23:11 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_min(int n1, int n2)
 {
@@ -19,18 +20,27 @@ static int	ft_min(int n1, int n2)
 	return (n2);
 }
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+static int	ft_max(int n1, int n2)
 {
-	size_t	little_len;
+	if (n1 > n2)
+		return (n1);
+	return (n2);
+}
 
-	little_len = ft_strlen(little);
-	if (little_len == 0)
-		return ((char *) big);
-	while (*big && len >= little_len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	n_len;
+
+	if ((long)len < 0)
+		len = ft_max(0, ft_strlen(haystack) + 1 + len);
+	n_len = ft_strlen(needle);
+	if (n_len == 0)
+		return ((char *) haystack);
+	while (*haystack && len >= n_len)
 	{
-		if (ft_strncmp(big, little, ft_min(len, little_len)) == 0)
-			return ((char *) big);
-		big++;
+		if (ft_strncmp(haystack, needle, ft_min(len, n_len)) == 0)
+			return ((char *) haystack);
+		haystack++;
 		len--;
 	}
 	return (NULL);
