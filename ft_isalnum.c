@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 18:48:27 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 23:15:11 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 15:07:39 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	return (ft_islower(c) || ft_isupper(c) || ft_isdigit(c));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

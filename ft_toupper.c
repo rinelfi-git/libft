@@ -6,11 +6,14 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:12:14 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/22 18:15:27 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 15:01:07 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+static int	ft_islower(int c)
+{
+	return (c >= 'a' && c <= 'z');
+}
 
 int	ft_toupper(int c)
 {

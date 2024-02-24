@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _ft_lstmap.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:41:35 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 23:09:58 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 15:04:48 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+static void	delete_content(void *c)
+{
+	free(c);
+	c = NULL;
+}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -22,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_list = ft_lstnew(f(lst->content));
 	if (new_list == NULL)
 	{
-		ft_lstclear(&lst, &free);
+		ft_lstclear(&lst, &delete_content);
 		return (NULL);
 	}
 	if (lst->next)

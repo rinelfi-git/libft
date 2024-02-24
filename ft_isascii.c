@@ -6,11 +6,9 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 18:52:44 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/21 09:05:04 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 14:56:13 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isascii(int c)
 {
