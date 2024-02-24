@@ -6,11 +6,11 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 09:12:03 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 22:01:18 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 17:20:30 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

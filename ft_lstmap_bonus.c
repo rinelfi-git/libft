@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 11:41:35 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/24 15:04:48 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:31:29 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (lst == NULL || f == NULL)
 		return (NULL);
 	new_list = ft_lstnew(f(lst->content));
-	if (new_list == NULL)
+	if (!new_list)
 	{
 		ft_lstclear(&lst, &delete_content);
 		return (NULL);
