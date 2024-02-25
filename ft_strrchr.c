@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:24:39 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 22:08:46 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/25 18:47:22 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*match;
+	size_t	i;
 
-	match = NULL;
-	while (*s)
+	i = ft_strlen(s);
+	if (c == '\0')
+		return ((char *)(s + i));
+	while (((long)i) >= 0)
 	{
-		if (((unsigned char)*s) == ((unsigned char)c))
-			match = (char *)s;
-		s++;
+		if (((unsigned char)s[i]) == ((unsigned char)c))
+			return ((char *)(s + i));
+		i--;
 	}
-	if (((unsigned char)*s) == ((unsigned char)c))
-		match = (char *)s;
-	return (match);
+	return (NULL);
 }
