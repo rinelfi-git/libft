@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:12:45 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/22 19:45:16 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/25 20:06:48 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*tmp;
+	unsigned char	*ref;
 
-	tmp = s;
+	ref = s;
 	while (n > 0)
 	{
-		*tmp = c;
-		tmp++;
+		*ref = c;
+		ref++;
 		n--;
 	}
 	return (s);

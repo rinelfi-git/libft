@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 07:44:27 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 22:42:43 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/25 20:57:02 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,14 @@ char	*ft_itoa(int n)
 	length = n_length(n);
 	n = n * sign;
 	ret = (char *)malloc((length + 1) * sizeof(char));
-	if (ret == NULL)
+	if (!ret)
 		return (NULL);
 	ret[length--] = '\0';
-	while (n / 10)
+	while ((sign > 0 && length >= 0) || (sign < 0 && length > 0))
 	{
 		ret[length--] = (n % 10) + '0';
 		n /= 10;
 	}
-	ret[length--] = n + '0';
 	if (sign < 0)
 		ret[length] = '-';
 	return (ret);

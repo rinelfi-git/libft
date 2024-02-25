@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 09:43:52 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/23 09:49:51 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/25 20:49:14 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,8 @@ void	ft_putnbr_fd(int n, int fd)
 			ft_putchar_fd('-', fd);
 			n = -n;
 		}
-		if (n < 10)
-			ft_putchar_fd('0' + n, fd);
-		else
-		{
+		if (n > 9)
 			ft_putnbr_fd(n / 10, fd);
-			ft_putnbr_fd(n % 10, fd);
-		}
+		ft_putchar_fd((n % 10) + '0', fd);
 	}
 }
