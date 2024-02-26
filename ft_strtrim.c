@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 20:48:40 by erijania          #+#    #+#             */
-/*   Updated: 2024/02/25 21:44:07 by erijania         ###   ########.fr       */
+/*   Updated: 2024/02/26 08:20:14 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	length;
 
 	start = (char *)s1;
-	end = (char *)s1 + ft_strlen(s1);
+	end = (char *)s1 + ft_strlen(s1) - 1;
 	while (*start && ft_strchr(set, *start))
 		start++;
 	while (end > start && ft_strchr(set, *end))
 		end--;
-	length = (end - start) + 1;
+	length = (end - start) + 2;
 	ret = (char *)malloc(length * sizeof(char));
 	if (!ret)
 		return (NULL);
